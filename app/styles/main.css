@@ -1,0 +1,98 @@
+
+#container {
+  margin: 0 auto;
+  width: 315px;
+  height: 315px;
+  margin-top: 50px;
+  color: red;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  border: 2px solid white;
+  float: left;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 100px;
+}
+
+.toprow {
+  border-top: none;
+  float: left;
+  color: yellow;
+  font-family: sans-serif;
+
+}
+
+.middlerow {
+  float: left;
+  color: yellow;
+  font-family: sans-serif;
+}
+
+.bottomrow {
+  border-bottom: none;
+  float: left;
+  color: yellow;
+  font-family: sans-serif;
+}
+
+.column1 {
+  border-left: none;
+  color: yellow;
+  font-family: sans-serif;
+}
+
+.column3 {
+  border-right: none;
+  color: yellow;
+  font-family: sans-serif;
+}
+
+.clear {
+clear: both;
+}
+
+h1 {
+  text-align: center;
+  margin: 0 auto;
+  color: red;
+  font-family: sans-serif;
+  font-size: 100px;
+}
+
+body {
+  background-color: black;
+  width: 600px;
+  margin: 0 auto;
+  color: white;
+  font-family: sans-serif;
+}
+
+button {
+  background: red;
+  border: none;
+  color: yellow;
+  font-family: sans-serif;
+  font-size: 50px;
+  margin: 20px 10px 10px 230px;
+  
+}
+
+#popup {
+  color: white;
+  background: blue;
+  position: relative;
+  height: 220px;
+  width: 220px;
+  top: -362px;
+  text-align: center;
+  margin: 0 auto;
+  display: none;
+
+}
+
+
+
+
