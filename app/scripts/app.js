@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('wdiApp', [])
+angular.module('wdiApp', ["firebase"])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
