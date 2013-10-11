@@ -2,8 +2,51 @@
 
 angular.module('wdiApp').controller('MainCtrl', function ($scope, angularFire){
 	var isXTurn = true;
-	$scope.board = [[{square: ""},{square: ""},{square: ""}],[{square: ""},{square: ""},{square: ""}],[{square: ""},{square: ""},{square: ""}]];
-;
+	 $scope.queue = {};
+  
+
+var board = new Firebase("https://newtic-jason.firebaseio.com/board");
+  angularFire(board, $scope, "board").then(function () {
+
+var queue = new Firebase("https://newtic-jason.firebaseio.com/queue");
+  angularFire(queue, $scope, "queue").then(function () {
+    
+    if ($scope.queue.gameId == undefined) {
+      console.log("I'm player 1");
+      $scope.player = "p1";
+
+      var newGame = {
+        board: [[{square: ""},{square: ""},{square: ""}],[{square: ""},{square: ""},{square: ""}],[{square: ""},{square: ""},{square: ""}]],
+        turn: 'p1',
+        //win: false,
+        turnCount: 0
+      };
+
+      $scope.gameId = $scope.board.push(newGame) - 1;
+
+      //create game
+      //add game id to queue
+      $scope.queue.gameId = $scope.gameId;
+      console.log("Player 1's game is: " + $scope.gameId);
+
+    } else {
+      console.log("I'm player 2");
+      $scope.player = "p2";
+      
+      //read game id from queue
+      //clear the queue
+      $scope.gameId = $scope.queue.gameId;
+      $scope.queue = {};
+      console.log("Player 2's game is: " + $scope.gameId);
+
+
+
+    };
+  });
+
+    $scope.hello = function () {
+      $scope.games[$scope.gameId].board[0]
+    }
 
 	$scope.clickDiv = function (cell){
 		if(cell.square != "")
@@ -112,3 +155,4 @@ else if($scope.board[0][2].square  == "O" &&
 	
 });
 
+});
