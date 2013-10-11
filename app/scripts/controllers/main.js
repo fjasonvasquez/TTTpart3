@@ -46,7 +46,7 @@ var queue = new Firebase("https://newtic-jason.firebaseio.com/queue");
 
     $scope.hello = function () {
       $scope.games[$scope.gameId].board[0]
-    }
+    };
 
 	$scope.clickDiv = function (cell){
 		if(cell.square != "")
