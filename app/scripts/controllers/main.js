@@ -4,12 +4,14 @@ angular.module('wdiApp').controller('MainCtrl', function ($scope, angularFire){
 	var isXTurn = true;
 	 $scope.queue = {};
   
-
+//initiate firebase
 var board = new Firebase("https://newtic-jason.firebaseio.com/board");
   angularFire(board, $scope, "board").then(function () {
 
 var queue = new Firebase("https://newtic-jason.firebaseio.com/queue");
   angularFire(queue, $scope, "queue").then(function () {
+
+    console.log($scope.queue.gameId);
     
     if ($scope.queue.gameId == undefined) {
       console.log("I'm player 1");
